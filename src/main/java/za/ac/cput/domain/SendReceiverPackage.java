@@ -1,8 +1,8 @@
 package za.ac.cput.domain;
 
 public class SendReceiverPackage {
-    private int idSender;
-    private int idReceiver;
+    private String idSender;
+    private String idReceiver;
     private int idPackage;
     private ShippingInfo shippingInfo;
 
@@ -15,11 +15,11 @@ public class SendReceiverPackage {
         this.shippingInfo = builder.shippingInfo;
     }
 
-    public int getIdSender() {
+    public String getIdSender() {
         return idSender;
     }
 
-    public int getIdReceiver() {
+    public String getIdReceiver() {
         return idReceiver;
     }
 
@@ -42,17 +42,17 @@ public class SendReceiverPackage {
     }
 
     public static class Builder {
-        private int idSender;
-        private int idReceiver;
+        private String idSender;
+        private String idReceiver;
         private int idPackage;
         private ShippingInfo shippingInfo;
 
-        public Builder setIdSender(int idSender) {
+        public Builder setIdSender(String idSender) {
             this.idSender = idSender;
             return this;
         }
 
-        public Builder setIdReceiver(int idReceiver) {
+        public Builder setIdReceiver(String idReceiver) {
             this.idReceiver = idReceiver;
             return this;
         }
