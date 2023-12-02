@@ -6,9 +6,10 @@ public class ShippingInfo {
     private int idOfficeStart;
     private int idOfficeEnd;
     private Date dateSend;
-    private  Date dateArrived;
+    private Date dateArrived;
 
     private ShippingInfo() {}
+
     private ShippingInfo(Builder builder){
         this.idOfficeStart = builder.idOfficeStart;
         this.idOfficeEnd = builder.idOfficeEnd;
@@ -45,7 +46,7 @@ public class ShippingInfo {
         private int idOfficeStart;
         private int idOfficeEnd;
         private Date dateSend;
-        private  Date dateArrived;
+        private Date dateArrived;
 
         public Builder setIdOfficeStart(int idOfficeStart) {
             this.idOfficeStart = idOfficeStart;
