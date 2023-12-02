@@ -1,7 +1,7 @@
 package za.ac.cput.domain;
 
 public class Receiver {
-    private int idReceiver;
+    private String idReceiver;
     private String firstName;
     private String lastName;
     private String phoneNumber;
@@ -16,7 +16,7 @@ public class Receiver {
         this.phoneNumber = builder.phoneNumber;
     }
 
-    public int getIdReceiver() {
+    public String getIdReceiver() {
         return idReceiver;
     }
 
@@ -43,12 +43,12 @@ public class Receiver {
     }
 
     public static class Builder {
-        private int idReceiver;
+        private String idReceiver;
         private String firstName;
         private String lastName;
         private String phoneNumber;
 
-        public Builder setIdReceiver(int idReceiver) {
+        public Builder setIdReceiver(String idReceiver) {
             this.idReceiver = idReceiver;
             return this;
         }
