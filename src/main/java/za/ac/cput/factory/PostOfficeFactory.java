@@ -22,4 +22,22 @@ public class PostOfficeFactory {
                 .setAddress(address)
                 .build();
     }
+
+    public static PostOffice createPostOffice(int idPostOffice, String namePostOffice, int maxCapacity, Address address){
+
+        if(Helper.isNullOrEmpty(namePostOffice))
+            return null;
+
+        if(maxCapacity <= 0 || idPostOffice <= 0)
+            return null;
+
+        if(address == null)
+            return null;
+
+        return new PostOffice.Builder().setIdPostOffice(idPostOffice)
+                .setNamePostOffice(namePostOffice)
+                .setMaxCapacity(maxCapacity)
+                .setAddress(address)
+                .build();
+    }
 }

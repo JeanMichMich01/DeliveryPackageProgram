@@ -1,6 +1,7 @@
 package za.ac.cput.repository;
 
 import za.ac.cput.domain.Address;
+import za.ac.cput.factory.AddressFactory;
 import za.ac.cput.util.Server;
 import java.sql.*;
 import java.util.ArrayList;
@@ -43,14 +44,8 @@ public class AddressRepository implements IAddressRepository{
                     int numberStreet = resultSet.getInt("number_street");
                     String nameStreet = resultSet.getString("name_street");
                     String zipCode = resultSet.getString("zip_code");
-                    String cityName = resultSet.getString("name_city");
 
-                    return new Address.Builder()
-                            .setNumberStreet(numberStreet)
-                            .setNameStreet(nameStreet)
-                            .setZipCode(zipCode)
-                            .setNameCity(cityName)
-                            .build();
+                    return AddressFactory.createAddress(numberStreet, nameStreet, zipCode, nameCity);
                 }
             }
         } catch (SQLException e) {
@@ -87,6 +82,7 @@ public class AddressRepository implements IAddressRepository{
         try (PreparedStatement pstmt = Server.getConnection().prepareStatement(query)) {
             pstmt.setString(1, nameCity);
 
+            pstmt.executeUpdate();
             return true;
         } catch (SQLException e) {
             throw new SQLException("Failed to execute DELETE query: " + e.getMessage());
@@ -107,12 +103,7 @@ public class AddressRepository implements IAddressRepository{
                 String zipCode = resultSet.getString("zip_code");
                 String nameCity = resultSet.getString("name_city");
 
-                Address address = new Address.Builder()
-                        .setNumberStreet(numberStreet)
-                        .setNameStreet(nameStreet)
-                        .setZipCode(zipCode)
-                        .setNameCity(nameCity)
-                        .build();
+                Address address =  AddressFactory.createAddress(numberStreet, nameStreet, zipCode, nameCity);
 
                 allAddress.add(address);
             }
