@@ -16,7 +16,7 @@ public class Server {
             String user = "root";
             String password = "";
             connection = DriverManager.getConnection(
-                    "jdbc:mysql://" + host +"/" + database,
+                    "jdbc:mysql://" + host + "/" + database,
                     user,
                     password
             );
