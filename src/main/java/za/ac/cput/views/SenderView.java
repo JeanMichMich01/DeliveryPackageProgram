@@ -24,7 +24,7 @@ public class SenderView {
         System.out.println("5. Show all Senders");
         System.out.println("6. Go back to the Main Menu");
         do {
-            System.out.println("Enter your choice: ");
+            System.out.print("Enter your choice: ");
             choice = scan.nextInt();
             switch (choice) {
                 case 1:

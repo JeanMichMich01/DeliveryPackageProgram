@@ -24,7 +24,7 @@ public class ReceiverView {
         System.out.println("5. Show all Receivers");
         System.out.println("6. Go back to the Main Menu");
         do {
-            System.out.println("Enter your choice: ");
+            System.out.print("Enter your choice: ");
             choice = scan.nextInt();
             switch (choice) {
                 case 1:
