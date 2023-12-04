@@ -5,16 +5,14 @@ import java.util.Date;
 public class ShippingInfo {
     private int idOfficeStart;
     private int idOfficeEnd;
-    private Date dateSend;
-    private Date dateArrived;
+    private String dateSend;
 
-    private ShippingInfo() {}
+    public ShippingInfo() {}
 
     private ShippingInfo(Builder builder){
         this.idOfficeStart = builder.idOfficeStart;
         this.idOfficeEnd = builder.idOfficeEnd;
         this.dateSend = builder.dateSend;
-        this.dateArrived = builder.dateArrived;
     }
 
     public int getIdOfficeStart() {
@@ -25,13 +23,10 @@ public class ShippingInfo {
         return idOfficeEnd;
     }
 
-    public Date getDateSend() {
+    public String getDateSend() {
         return dateSend;
     }
 
-    public Date getDateArrived() {
-        return dateArrived;
-    }
 
     @Override
     public String toString() {
@@ -39,14 +34,12 @@ public class ShippingInfo {
                 "idOfficeStart=" + idOfficeStart +
                 ", idOfficeEnd=" + idOfficeEnd +
                 ", dateSend=" + dateSend +
-                ", dateArrived=" + dateArrived +
                 '}';
     }
     public static class Builder{
         private int idOfficeStart;
         private int idOfficeEnd;
-        private Date dateSend;
-        private Date dateArrived;
+        private String dateSend;
 
         public Builder setIdOfficeStart(int idOfficeStart) {
             this.idOfficeStart = idOfficeStart;
@@ -58,13 +51,8 @@ public class ShippingInfo {
             return this;
         }
 
-        public Builder setDateSend(Date dateSend) {
+        public Builder setDateSend(String dateSend) {
             this.dateSend = dateSend;
-            return this;
-        }
-
-        public Builder setDateArrived(Date dateArrived) {
-            this.dateArrived = dateArrived;
             return this;
         }
         public ShippingInfo build(){
