@@ -80,9 +80,8 @@ public class ShippingInfoRepository implements IShippingInfoRepository{
         String query = "DELETE FROM shipping_info " +
                 "WHERE date_send = ?";
         try (PreparedStatement pstmt = Server.getConnection().prepareStatement(query)) {
-            pstmt.setString(2,  dateSend);
+            pstmt.setString(1,  dateSend);
             pstmt.executeUpdate();
-
             return true;
         } catch (SQLException e) {
             throw new SQLException("Failed to execute DELETE query: " + e.getMessage());
