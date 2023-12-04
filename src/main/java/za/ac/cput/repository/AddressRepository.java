@@ -82,8 +82,8 @@ public class AddressRepository implements IAddressRepository{
         try (PreparedStatement pstmt = Server.getConnection().prepareStatement(query)) {
             pstmt.setString(1, nameCity);
 
-            pstmt.executeUpdate();
-            return true;
+            int rowsAffected = pstmt.executeUpdate();
+            return rowsAffected > 0;
         } catch (SQLException e) {
             throw new SQLException("Failed to execute DELETE query: " + e.getMessage());
         }
