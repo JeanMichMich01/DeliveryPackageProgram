@@ -76,7 +76,6 @@ public class  SendReceiverPackageRepository implements ISendReceiverPackageRepos
         return sendReceiverPackage;
     }
 
-
     @Override
     public boolean delete(Integer idPackage) throws SQLException {
         String query = "DELETE FROM send_receiver_package " +

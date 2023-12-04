@@ -7,4 +7,5 @@ import java.util.List;
 
 public interface ISendReceiverPackageRepository extends IRepository<SendReceiverPackage, Integer>{
     public List<SendReceiverPackage> getAll() throws SQLException;
+
 }
