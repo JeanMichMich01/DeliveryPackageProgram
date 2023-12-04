@@ -138,7 +138,7 @@ public class AddressView {
                 do {
                     System.out.println("\n\n");
                     Scanner scan2 = new Scanner(System.in);
-                    System.out.println("Add a new Address : ");
+                    System.out.println("Update Address : ");
                     System.out.print("Street Number : ");
                     int numberStreet = scan2.nextInt();
                     scan2.nextLine();
@@ -153,7 +153,6 @@ public class AddressView {
 
                 } while (newAddress == null);
 
-                // Call the update method to update the Address in the database
                 addressRepository.update(newAddress);
 
                 System.out.println("Address updated successfully: " + newAddress);
