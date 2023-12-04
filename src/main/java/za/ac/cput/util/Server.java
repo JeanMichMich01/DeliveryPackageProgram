@@ -15,8 +15,9 @@ public class Server {
             String database = "delivery_package";
             String user = "root";
             String password = "";
+            int port = 3308;
             connection = DriverManager.getConnection(
-                    "jdbc:mysql://" + host + "/" + database,
+                    "jdbc:mysql://" + host + ":"+ port + "/" + database,
                     user,
                     password
             );

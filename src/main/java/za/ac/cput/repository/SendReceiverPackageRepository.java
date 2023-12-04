@@ -31,13 +31,14 @@ public class  SendReceiverPackageRepository implements ISendReceiverPackageRepos
         return sendReceiverPackage;
     }
 
+
     @Override
-    public SendReceiverPackage read(String idPackage) throws SQLException {
+    public SendReceiverPackage read(Integer idPackage) throws SQLException {
         String query = "SELECT * " +
                 "FROM send_receiver_package " +
                 "WHERE id_package = ?";
         try (PreparedStatement pstmt = Server.getConnection().prepareStatement(query)) {
-            pstmt.setInt(1, Integer.parseInt(idPackage));
+            pstmt.setInt(1, idPackage);
 
             try (ResultSet resultSet = pstmt.executeQuery()) {
                 if (resultSet.next()) {
@@ -48,7 +49,7 @@ public class  SendReceiverPackageRepository implements ISendReceiverPackageRepos
                     ShippingInfoRepository shippingInfoRepository = new ShippingInfoRepository();
                     ShippingInfo shippingInfo = shippingInfoRepository.read(dateSend);
 
-                    return SendReceiverPackageFactory.createSendReceiverPackage(idSender, idReceiver, Integer.parseInt(idPackage), shippingInfo);
+                    return SendReceiverPackageFactory.createSendReceiverPackage(idSender, idReceiver, idPackage, shippingInfo);
                 }
             }
         } catch (SQLException e) {
@@ -75,12 +76,13 @@ public class  SendReceiverPackageRepository implements ISendReceiverPackageRepos
         return sendReceiverPackage;
     }
 
+
     @Override
-    public boolean delete(String idPackage) throws SQLException {
+    public boolean delete(Integer idPackage) throws SQLException {
         String query = "DELETE FROM send_receiver_package " +
                 "WHERE id_package = ?";
         try (PreparedStatement pstmt = Server.getConnection().prepareStatement(query)) {
-            pstmt.setInt(1, Integer.parseInt(idPackage));
+            pstmt.setInt(1, idPackage);
 
             pstmt.executeUpdate();
             return true;
