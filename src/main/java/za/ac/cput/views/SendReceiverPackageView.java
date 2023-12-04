@@ -218,7 +218,6 @@ public class SendReceiverPackageView {
         } catch (SQLException e) {
             System.err.println("Error handling Post Offices retrieval: " + e.getMessage());
         }
-
         MenuSendReceiverPackage();
     }
 }

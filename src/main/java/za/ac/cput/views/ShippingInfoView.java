@@ -218,7 +218,6 @@ public class ShippingInfoView {
         } catch (SQLException e) {
             System.err.println("Error handling Information Shipping retrieval: " + e.getMessage());
         }
-
         MenuShippingInfo();
     }
 }
