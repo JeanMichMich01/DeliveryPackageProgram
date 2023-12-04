@@ -1,16 +1,10 @@
 package za.ac.cput;
 
-import za.ac.cput.domain.Address;
-import za.ac.cput.domain.PostOffice;
-import za.ac.cput.factory.AddressFactory;
-import za.ac.cput.factory.PostOfficeFactory;
-import za.ac.cput.repository.AddressRepository;
-import za.ac.cput.repository.PostOfficeRepository;
 import za.ac.cput.util.Server;
 import za.ac.cput.views.AddressView;
+import za.ac.cput.views.PostOfficeView;
 
 import java.sql.SQLException;
-import java.util.List;
 import java.util.Scanner;
 
 public class Main {
@@ -18,7 +12,6 @@ public class Main {
 
         Server.connect();
         MainMenu();
-
 
     }
 
@@ -81,7 +74,7 @@ public class Main {
                     AddressView.MenuAddress();
                     break;
                 case 2:
-                    System.out.println();
+                    PostOfficeView.MenuPostOffice();
                     break;
                 case 3:
                     System.out.println();
